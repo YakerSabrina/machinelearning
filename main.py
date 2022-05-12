@@ -1,4 +1,3 @@
-import numpy as np
 import cv2
 import os
 
@@ -98,8 +97,8 @@ if __name__ == '__main__':
     savepath = 'E:\Program Files\programpython\pythonproject/model.h5'
     mnist = tf.keras.datasets.mnist
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
-    #print(x_train.shape)
-    #load_mnist()
-    #save_video()
-    #train_model()
+    x_train, x_test = x_train / 255.0, x_test / 255.0
+    print(x_train.shape)
+    save_video()
+    train_model()
     show_image_pred()
